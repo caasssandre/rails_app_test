@@ -1,10 +1,22 @@
-<% if logged_in? %>
-  <%=link_to 'Log out', logout_path, method: :delete%> |
-<% else %>
-  <%= link_to 'Login', login_path %> |
-  <%= link_to 'Sign up', signup_path %> |
-<% end %>
-<%= link_to 'Blog', articles_path %> | 
-<%= link_to 'About', about_path %> |
-<%= link_to 'Home', root_path %> |
-<%= link_to "See all users", users_path %>
+<div class = "navbar">
+  <% if logged_in? %>
+    <%=link_to 'Log out', logout_path, method: :delete%>
+  <% else %>
+    <%= link_to 'Login', login_path, class: "link"  %>
+    <%= link_to 'Sign up', signup_path, class: "link"  %>
+  <% end %>
+  <%= link_to 'Blog', articles_path, class: "link" %>
+  <%= link_to 'About', about_path, class: "link"  %>
+  <%= link_to 'Home', root_path, class: "link"  %>
+  <%= link_to "See all users", users_path, class: "link"  %>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <%= link_to 'Blog', articles_path, class: "link"  %>
+      <%= link_to 'Blog', articles_path, class: "link"  %>
+      <%= link_to 'Blog', articles_path, class: "link"  %>
+    </div>
+  </div>
+</div>
